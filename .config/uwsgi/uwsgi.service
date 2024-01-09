@@ -1,0 +1,15 @@
+[Unit]
+Description=uWSGI service
+After=syslog.target
+ 
+[Service]
+ExecStart=/home/ubuntu/boosters_scm/webserver_env/bin/uwsgi -i /home/ubuntu/boosters_scm/scm_240102/django_240103/.config/uwsgi/mysite.ini
+ 
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+ 
+[Install]
+WantedBy=multi-user.target
