@@ -1,6 +1,5 @@
 from django.shortcuts import render, HttpResponse,redirect
 from django.views.decorators.csrf import csrf_exempt
-from app_240102.test_sql import call_query
 nextId = 4
 topics = [
 {'id':1, 'title':'Routing','body':'Routing is ..'},
@@ -132,7 +131,7 @@ def update(request, id):
 def query(request):
     return render(request,'query_input.html')
 
-
+'''
 @csrf_exempt
 def queryrun(request):
     
@@ -144,3 +143,4 @@ def queryrun(request):
         return redirect('/')
         
         return redirect(f'/read/{id}')
+'''

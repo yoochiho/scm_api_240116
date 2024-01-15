@@ -1,6 +1,5 @@
-
 from django.urls import path,include
-from app_240102 import views,views_table, test_sql
+from app_240102 import views,views_table
 
 urlpatterns = [
     path('',views.index),
@@ -8,8 +7,7 @@ urlpatterns = [
     path('read/<id>',views.read),
     path('delete',views.delete),
     path('update/<id>',views.update),
-    path('raw/',views_table.load_data),
     path('query/',views.query),
-    path('queryrun/',views.queryrun)
+    path('crontab_scm/',views_table.crontab_scm)
     
 ]
